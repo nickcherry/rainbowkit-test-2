@@ -1,0 +1,35 @@
+html, body, #root, #root > div {
+  height: 100%;
+}
+
+
+#example {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 1rem;
+}
+
+button {
+  margin-top: 2rem;
+}
+
+.fields {
+  margin-top: 2rem;
+}
+
+.field {
+  font-family: monospace;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.label, .value {
+  word-break: break-all;
+}
