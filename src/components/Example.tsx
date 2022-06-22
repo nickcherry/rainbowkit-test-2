@@ -12,6 +12,18 @@ const Example: FC = () => {
     }
   }, [account, reset]);
 
+  useEffect(() => {
+    if (account) {
+      alert(`account connected: ${account.address}`);
+    }
+  }, [account]);
+
+  useEffect(() => {
+    if (signedMessage) {
+      alert(`message signed: ${signedMessage}`);
+    }
+  }, [signedMessage]);
+
   return (
     <div id="example">
       <ConnectButton />
