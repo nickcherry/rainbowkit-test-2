@@ -10,7 +10,6 @@ const Example: FC = () => {
 
   useEffect(() => {
     const onFocus = () => {
-      alert('window focused');
       setLastForcedRenderAt(Date.now());
     };
 
