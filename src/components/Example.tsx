@@ -1,41 +1,16 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { useAccount, useSignMessage } from 'wagmi';
 
 const Example: FC = () => {
   const { data: account } = useAccount();
   const { data: signedMessage, signMessage, reset } = useSignMessage();
 
-  const [, setLastForcedRenderAt] = useState(0);
-
-  useEffect(() => {
-    const onFocus = () => {
-      setLastForcedRenderAt(Date.now());
-    };
-
-    window.addEventListener('focus', onFocus);
-    return () => {
-      window.removeEventListener('focus', onFocus);
-    };
-  });
-
   useEffect(() => {
     if (!account) {
       reset();
     }
   }, [account, reset]);
-
-  useEffect(() => {
-    if (account) {
-      alert(`account connected: ${account.address}`);
-    }
-  }, [account]);
-
-  useEffect(() => {
-    if (signedMessage) {
-      alert(`message signed: ${signedMessage}`);
-    }
-  }, [signedMessage]);
 
   return (
     <div id="example">
