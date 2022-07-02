@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react';
 import { useAccount, useSignMessage } from 'wagmi';
 
 const Example: FC = () => {
-  const { data: account } = useAccount();
+  const account = useAccount();
   const { data: signedMessage, signMessage, reset } = useSignMessage();
 
   useEffect(() => {
